@@ -9,14 +9,14 @@ $(document).ready(function () {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 700,
+                breakpoint: 810,
                 settings: {
                     slidesToShow: 2,
 
                 }
             },
             {
-                breakpoint: 535,
+                breakpoint: 500,
                 settings: {
                     slidesToShow: 1,
 

@@ -430,6 +430,12 @@ h6 {
   display: block;
   height: 330px;
   border-radius: 15px;
+  -webkit-transition: margin-top 0.1s linear;
+  transition: margin-top 0.1s linear;
+}
+
+.slider__pos:hover {
+  margin-top: 10px;
 }
 
 @media (max-width: 1035px) {
@@ -457,6 +463,8 @@ h6 {
 .ibg {
   width: 225px;
   height: 265px;
+  border: solid 1px #000;
+  border-radius: 5px;
   margin: 0 auto;
   background-position: center;
   background-size: cover;
