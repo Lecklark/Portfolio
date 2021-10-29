@@ -76,7 +76,7 @@ let url = 'https://api.github.com/users/Lecklark';
 fetch(url)
     .then(response => response.json())
     .then(responseJSON => {
-        console.log(responseJSON);
+        //console.log(responseJSON);
         document.querySelector(".main-info__avatar").src = responseJSON.avatar_url;
         let git = document.querySelector(".footer__cont-git");
         let gitIcon = document.querySelector(".footer__links_git");
@@ -87,10 +87,8 @@ fetch(url)
         fetch(responseJSON.repos_url)
             .then(response => response.json())
             .then(responseJSON => {
-                console.log(responseJSON);
-
                 responseJSON.forEach(repo => {
-                    console.log(repo);
+                    //console.log(repo);
                     const newElementRepo = document.createElement('div');
                     newElementRepo.innerHTML = `<div><div class="slider__item">
                     <a href="${repo.html_url}" class="slider__pos">
@@ -103,7 +101,7 @@ fetch(url)
             })
     })
 
-let url1 = 'https://api.github.com/repos/Lecklark/Frontend_projects/contents';
+let url1 = 'https://api.github.com/repos/Lecklark/Portfolio_git_api/contents/img?ref=main';
 fetch(url1)
     .then(response => response.json())
     .then(responseJSON => console.log(responseJSON))
