@@ -1,0 +1,65 @@
+.footer {
+    background-color: #e9d5ec;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    box-shadow: 0 -5px 5px #c59ccb;
+    &__head {
+        text-align: center;
+        font-size: 25px;
+        @media (max-width: $md1) {
+            font-size: 20px;
+        }
+    }
+
+    &__left {
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $md3) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin-top: 20px;
+    }
+
+    &__cont {
+        margin-bottom: 15px;
+        display: block;
+        color: #000;
+        font-size: 20px;
+        @media (max-width: $md1) {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        @media (max-width: $md3) {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__right {
+    }
+
+    &__icons {
+    }
+
+    &__icon {
+        max-width: 50px;
+        margin-left: 20px;
+        @media (max-width: $md1) {
+            margin-left: 10px;
+        }
+        @media (max-width: $md3) {
+            max-width: 30px;
+            margin: 10px 5px;
+        }
+    }
+}
