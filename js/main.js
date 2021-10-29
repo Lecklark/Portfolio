@@ -1,6 +1,5 @@
 
 //СЛИК_СЛАЙДЕР
-
 $(document).ready(function () {
     $('.slider').slick({
         dots: true,
@@ -76,7 +75,7 @@ let url = 'https://api.github.com/users/Lecklark';
 fetch(url)
     .then(response => response.json())
     .then(responseJSON => {
-        //console.log(responseJSON);
+        console.log(responseJSON);
         document.querySelector(".main-info__avatar").src = responseJSON.avatar_url;
         let git = document.querySelector(".footer__cont-git");
         let gitIcon = document.querySelector(".footer__links_git");
@@ -86,22 +85,38 @@ fetch(url)
         document.querySelector(".main-info__name").innerHTML = responseJSON.name;
         fetch(responseJSON.repos_url)
             .then(response => response.json())
-            .then(responseJSON => {
-                responseJSON.forEach(repo => {
-                    //console.log(repo);
-                    const newElementRepo = document.createElement('div');
-                    newElementRepo.innerHTML = `<div><div class="slider__item">
-                    <a href="${repo.html_url}" class="slider__pos">
-                        <img class="slider__img" src="img/LUL.png" alt="preview">
-                        <div class="slider__text">${repo.name}</div>
-                    </a>
-                </div></div>`;
-                    $('.slider').slick('slickAdd', newElementRepo);
+            .then(answer => {
+                answer.forEach(repo => {
+                    fetch(`https://api.github.com/repos/${responseJSON.login}/${repo.name}/contents`)
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            data.forEach(files => {
+                                if (files.name == 'preview.png') {
+                                    const newElementRepo = document.createElement('div');
+                                    newElementRepo.innerHTML = `<div><div class="slider__item">
+                                    <a href="${repo.html_url}" class="slider__pos">
+                                       <div class ="ibg"> <img class="slider__img" src="${files.download_url}" alt="preview"></div>
+                                        <div class="slider__text">${repo.description}</div>
+                                    </a></div></div>`;
+                                    $('.slider').slick('slickAdd', newElementRepo);
+                                    ibg();
+                                }
+                            })
+
+                        })
                 });
             })
     })
 
-let url1 = 'https://api.github.com/repos/Lecklark/Portfolio_git_api/contents/img?ref=main';
-fetch(url1)
-    .then(response => response.json())
-    .then(responseJSON => console.log(responseJSON))
+
+//функция, заменяющая img на backrgound
+function ibg() {
+    let ibg = document.querySelectorAll(".ibg");
+    for (var i = 0; i < ibg.length; i++) {
+        if (ibg[i].querySelector('img')) {
+            ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+        }
+    }
+}
+
