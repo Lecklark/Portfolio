@@ -92,7 +92,7 @@ fetch(url)
                     const newElementRepo = document.createElement('div');
                     newElementRepo.innerHTML = `<div><div class="slider__item">
                     <a href="${repo.html_url}" class="slider__pos">
-                        <img class="slider__img" src="img/LUL.png" alt="">
+                        <img class="slider__img" src="img/LUL.png" alt="preview">
                         <div class="slider__text">${repo.name}</div>
                     </a>
                 </div></div>`;
