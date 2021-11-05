@@ -250,7 +250,7 @@ h6 {
           align-items: center;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 810px) {
   .footer__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

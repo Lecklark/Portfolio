@@ -24,9 +24,8 @@ $(document).ready(function () {
             }
 
         ]
-
     });
-    $('.add-remove').slick('slickAdd', '<div><h3>' + 5 + '</h3></div>');
+
 });
 
 
@@ -103,7 +102,6 @@ fetch(url)
                                     ibg();
                                 }
                             })
-
                         })
                 });
             })
