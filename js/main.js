@@ -86,15 +86,16 @@ fetch(url)
             .then(response => response.json())
             .then(answer => {
                 answer.forEach(repo => {
+                    console.log(repo);
                     fetch(`https://api.github.com/repos/${responseJSON.login}/${repo.name}/contents`)
                         .then(res => res.json())
                         .then(data => {
-                            console.log(data);
+
                             data.forEach(files => {
                                 if (files.name == 'preview.png') {
                                     const newElementRepo = document.createElement('div');
                                     newElementRepo.innerHTML = `<div><div class="slider__item">
-                                    <a href="${repo.html_url}" class="slider__pos">
+                                    <a href="https://lecklark.github.io/${repo.name}" class="slider__pos">
                                        <div class ="ibg"> <img class="slider__img" src="${files.download_url}" alt="preview"></div>
                                         <div class="slider__text">${repo.description}</div>
                                     </a></div></div>`;
