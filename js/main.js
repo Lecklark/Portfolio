@@ -74,7 +74,7 @@ let url = 'https://api.github.com/users/Lecklark';
 fetch(url)
     .then(response => response.json())
     .then(responseJSON => {
-        console.log(responseJSON);
+
         document.querySelector(".main-info__avatar").src = responseJSON.avatar_url;
         let git = document.querySelector(".footer__cont-git");
         let gitIcon = document.querySelector(".footer__links_git");
@@ -90,6 +90,8 @@ fetch(url)
                     fetch(`https://api.github.com/repos/${responseJSON.login}/${repo.name}/contents`)
                         .then(res => res.json())
                         .then(data => {
+
+
 
                             data.forEach(files => {
                                 if (files.name == 'preview.png') {
