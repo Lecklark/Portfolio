@@ -309,11 +309,10 @@ h6 {
   position: relative;
 }
 
-/* Слайдер запущен */
-/* Слайдер с точками */
 /* Ограничивающая оболочка */
 .slick-list {
   overflow: hidden;
+  margin-bottom: 15px;
 }
 
 /* Лента слайдов */
@@ -324,6 +323,9 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 /* Слайд */
@@ -332,10 +334,10 @@ h6 {
   display: block;
 }
 
-/* Слайд активный (показывается) */
-/* Слайд основной */
-/* Слайд по центру */
-/* Клонированный слайд */
+.slick-slide > div {
+  height: 100%;
+}
+
 /* Стрелка */
 .slick-arrow {
   position: absolute;
@@ -383,7 +385,6 @@ h6 {
   }
 }
 
-/* Стрелка не активная */
 /* Точки (булиты) */
 .slick-dots {
   display: -webkit-box;
@@ -418,30 +419,36 @@ h6 {
   opacity: 0.5;
 }
 
+.slider {
+  margin-top: 20px;
+}
+
 .slider__item {
   margin: 0 auto;
+  height: 100%;
 }
 
 .slider__pos {
   background-color: #ecded5;
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 260px;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px;
   display: block;
-  height: 330px;
   border-radius: 15px;
-  -webkit-transition: margin-top 0.1s linear;
-  transition: margin-top 0.1s linear;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .slider__pos:hover {
-  margin-top: 10px;
+  opacity: 0.8;
 }
 
 @media (max-width: 1035px) {
   .slider__pos {
-    max-width: 170px;
-    height: 230px;
+    max-width: 190px;
   }
 }
 
@@ -458,36 +465,6 @@ h6 {
   .slider__text {
     font-size: 16px;
   }
-}
-
-.ibg {
-  width: 225px;
-  height: 265px;
-  border: solid 1px #000;
-  border-radius: 5px;
-  margin: 0 auto;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 10;
-}
-
-@media (max-width: 1035px) {
-  .ibg {
-    width: 155px;
-    height: 185px;
-  }
-}
-
-.ibg img {
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
 }
 
 body {
@@ -763,4 +740,34 @@ body.lock {
   .works__head {
     font-size: 20px;
   }
+}
+
+.ibg {
+  width: 225px;
+  height: 265px;
+  border: solid 1px #000;
+  border-radius: 5px;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 1035px) {
+  .ibg {
+    width: 155px;
+    height: 185px;
+  }
+}
+
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
 }

@@ -2,38 +2,27 @@
 .slick-slider {
     position: relative;
 }
-/* Слайдер запущен */
-.slick-slider.slick-initialized {
-}
-/* Слайдер с точками */
-.slick-slider.slick-dotted {
-}
+
 /* Ограничивающая оболочка */
 .slick-list {
     overflow: hidden;
+    margin-bottom: 15px;
 }
 /* Лента слайдов */
 .slick-track {
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
 }
 /* Слайд */
 .slick-slide {
     margin: 0px;
     display: block;
+    & > div {
+        height: 100%;
+    }
 }
-/* Слайд активный (показывается) */
-.slick-slide.slick-active {
-}
-/* Слайд основной */
-.slick-slide.slick-current {
-}
-/* Слайд по центру */
-.slick-slide.slick-center {
-}
-/* Клонированный слайд */
-.slick-slide.slick-cloned {
-}
+
 /* Стрелка */
 .slick-arrow {
     position: absolute;
@@ -69,9 +58,7 @@
         margin-right: -30px;
     }
 }
-/* Стрелка не активная */
-.slick-arrow.slick-disabled {
-}
+
 /* Точки (булиты) */
 .slick-dots {
     display: flex;
@@ -99,24 +86,26 @@
 }
 
 .slider {
+    margin-top: 20px;
     &__item {
         margin: 0 auto;
+        height: 100%;
     }
     &__pos {
         background-color: #ecded5;
-        margin: 20px auto;
+        margin: 0 auto;
         max-width: 260px;
-        padding: 20px 10px 20px 10px;
+        padding: 20px 10px;
         display: block;
-        height: 330px;
         border-radius: 15px;
-        transition: margin-top 0.1s linear;
+        transition: opacity 0.1s linear;
+        height: 100%;
+        box-sizing: border-box;
         &:hover {
-            margin-top: 10px;
+            opacity: 0.8;
         }
         @media (max-width: $md1) {
-            max-width: 170px;
-            height: 230px;
+            max-width: 190px;
         }
     }
 
@@ -131,31 +120,4 @@
             font-size: 16px;
         }
     }
-}
-
-.ibg {
-    width: 225px;
-    height: 265px;
-    border: solid 1px #000;
-    border-radius: 5px;
-    margin: 0 auto;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    @media (max-width: $md1) {
-        width: 155px;
-        height: 185px;
-    }
-    z-index: 10;
-}
-
-.ibg img {
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
 }
