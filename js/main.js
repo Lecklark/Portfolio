@@ -97,7 +97,7 @@ fetch(url)
                                 if (files.name == 'preview.png') {
                                     const newElementRepo = document.createElement('div');
                                     newElementRepo.innerHTML = `<div><div class="slider__item">
-                                    <a href="https://lecklark.github.io/${repo.name}" class="slider__pos">
+                                    <a href="https://github.com/Lecklark/${repo.name}" class="slider__pos">
                                        <div class ="ibg"> <img class="slider__img" src="${files.download_url}" alt="preview"></div>
                                         <div class="slider__text">${repo.description}</div>
                                     </a></div></div>`;
