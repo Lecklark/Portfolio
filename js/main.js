@@ -86,7 +86,7 @@ fetch(url)
             .then(response => response.json())
             .then(answer => {
                 answer.forEach(repo => {
-                    console.log(repo);
+
                     fetch(`https://api.github.com/repos/${responseJSON.login}/${repo.name}/contents`)
                         .then(res => res.json())
                         .then(data => {
