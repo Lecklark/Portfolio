@@ -90,9 +90,6 @@ fetch(url)
                     fetch(`https://api.github.com/repos/${responseJSON.login}/${repo.name}/contents`)
                         .then(res => res.json())
                         .then(data => {
-
-
-
                             data.forEach(files => {
                                 if (files.name == 'preview.png') {
                                     const newElementRepo = document.createElement('div');
